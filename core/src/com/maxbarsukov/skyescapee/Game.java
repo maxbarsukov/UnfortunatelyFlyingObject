@@ -24,10 +24,25 @@ public class Game extends ApplicationAdapter {
 		batch.draw(img, 0, 0);
 		batch.end();
 	}
-	
+
+	@Override
+	public void resize(int width, int height) {
+		super.resize(width, height);
+	}
+
 	@Override
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
+	}
+
+	@Override
+	public void pause() {
+		super.pause();
+	}
+
+	@Override
+	public void resume() {
+		super.resume();
 	}
 }
