@@ -32,7 +32,17 @@ public class Player {
         return alive && velocity.y > -70;
     }
 
+    public void die() {
+        alive = false;
+        velocity.y = 0;
+    }
+
     public void decelerate() {
+        acceleration.y = 0;
+    }
+
+    public void stop() {
+        velocity.y = 0;
         acceleration.y = 0;
     }
 
