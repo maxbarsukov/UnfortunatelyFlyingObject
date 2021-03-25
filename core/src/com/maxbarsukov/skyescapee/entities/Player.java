@@ -4,6 +4,12 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Player {
+    private static final int FLAP = 230;
+    private static final int GRAVITY = -460;
+    private static final int VELOCITY_LIMIT = -345;
+    private static final int FALL = -110;
+    private static final int FLAP_AT = -70;
+
     private Vector2 position;
     private Vector2 velocity;
     private Vector2 acceleration;
@@ -19,17 +25,17 @@ public class Player {
         this.height = height;
         position = new Vector2(x, y);
         velocity = new Vector2(0, 0);
-        acceleration = new Vector2(0, -100);
+        acceleration = new Vector2(0, GRAVITY);
         bounds = new Circle();
         alive = true;
     }
 
     public boolean isFalling() {
-        return velocity.y < -110;
+        return velocity.y < FALL;
     }
 
     public boolean doFlap() {
-        return alive && velocity.y > -70;
+        return alive && velocity.y > FLAP_AT;
     }
 
     public void die() {
@@ -90,7 +96,7 @@ public class Player {
         position.set(x, y);
         rotation = 0;
         velocity.set(0 , 0);
-        acceleration.set(0, -100);
+        acceleration.set(0, GRAVITY);
         alive = true;
     }
 }
