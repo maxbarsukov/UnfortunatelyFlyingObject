@@ -31,6 +31,13 @@ public class Player {
         alive = true;
     }
 
+    public boolean onClick() {
+        if (alive) {
+            velocity.y = FLAP;
+        }
+        return true;
+    }
+
     public boolean isFalling() {
         return velocity.y < FALL;
     }
