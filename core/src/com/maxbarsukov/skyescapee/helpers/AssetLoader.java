@@ -79,7 +79,6 @@ public class AssetLoader {
         TEXTURE_PLAYER_ANIMATION = new Texture(TEXTURE_REGION_PLAYER_FLY);
         TextureRegion textureRegion = new TextureRegion(TEXTURE_PLAYER_ANIMATION);
         int frameWidth = TEXTURE_PLAYER_ANIMATION.getWidth() / ANIMATION_PLAYER_FRAME_COUNT;
-        // Create frames from the every single texture of the animation
         for (int i = 0; i < ANIMATION_PLAYER_FRAME_COUNT; i++) {
             PLAYER[i] = new TextureRegion(textureRegion, i * frameWidth, 0, frameWidth, textureRegion.getRegionHeight());
         }

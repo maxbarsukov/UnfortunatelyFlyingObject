@@ -2,11 +2,17 @@ package com.maxbarsukov.skyescapee.entities;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
+import com.maxbarsukov.skyescapee.screens.GameScreen;
 
 public class Player {
     // Class constants
     private static final int FLAP = 230;
     private static final int GRAVITY = -460;
+    private static final int VELOCITY_LIMIT = -345;
+    private static final int ROTATION_CW = 480;
+    private static final int ROTATION_CCW = 360;
+    private static final int ROTATION_MAX_UP = 20;
+    private static final int ROTATION_MAX_DOWN = -90;
     private static final int FALL = -110;
     private static final int FLAP_AT = -70;
 
@@ -29,6 +35,40 @@ public class Player {
         acceleration = new Vector2(0, GRAVITY);
         bounds = new Circle();
         alive = true;
+    }
+
+    public void update(float delta) {
+        bounds.set(position.x + 18, position.y + 12, 12.5f);
+
+        // Fall
+        velocity.add(acceleration.cpy().scl(delta));
+        if (velocity.y < VELOCITY_LIMIT) {
+            velocity.y = VELOCITY_LIMIT;
+        }
+
+        // Ceiling
+        if (position.y > GameScreen.HEIGHT - 15) {
+            position.y = GameScreen.HEIGHT - 15;
+            velocity.y = 0;
+        }
+
+        position.add(velocity.cpy().scl(delta));
+
+        // Rotate counterclockwise
+        if (velocity.y > 0) {
+            rotation += ROTATION_CW * delta;
+            if (rotation > ROTATION_MAX_UP) {
+                rotation = ROTATION_MAX_UP;
+            }
+        }
+
+        // Rotate clockwise
+        if (isFalling() && alive) {
+            rotation -= ROTATION_CCW * delta;
+            if (rotation < ROTATION_MAX_DOWN) {
+                rotation = ROTATION_MAX_DOWN;
+            }
+        }
     }
 
     public boolean onClick() {
