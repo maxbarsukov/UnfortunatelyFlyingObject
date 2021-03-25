@@ -28,6 +28,11 @@ public abstract class Scrollable {
         }
     }
 
+    public void reset(float newX) {
+        position.x = newX;
+        isScrolled = false;
+    }
+
     public boolean isScrolled() {
         return isScrolled;
     }
@@ -58,6 +63,11 @@ public abstract class Scrollable {
 
     public void stop() {
         velocity.x = 0;
+    }
+
+    public void onReset(float x, float y, float scrollSpeed) {
+        position.set(x , y);
+        velocity.x = scrollSpeed;
     }
 
     public abstract boolean collides(Bird bird);
