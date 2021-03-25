@@ -70,5 +70,5 @@ public abstract class Scrollable {
         velocity.x = scrollSpeed;
     }
 
-    public abstract boolean collides(Bird bird);
+    public abstract boolean collides(Player player);
 }

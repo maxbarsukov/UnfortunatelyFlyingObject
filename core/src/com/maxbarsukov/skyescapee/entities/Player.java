@@ -1,4 +1,4 @@
 package com.maxbarsukov.skyescapee.entities;
 
-public class Bird {
+public class Player {
 }
