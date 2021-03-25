@@ -143,6 +143,8 @@ public class GameRenderer implements Disposable {
             // Draw start
             spriteBatch.draw(startTxtr, GameScreen.WIDTH / 2 - startTxtr.getWidth() / 2, GameScreen.HEIGHT / 2 - startTxtr.getHeight() / 2 + 65,
                     startTxtr.getWidth(), startTxtr.getHeight());
+            AssetLoader.SHADOW.draw(spriteBatch, "High Score : " + Integer.toString(AssetLoader.getHighScore()), GameScreen.WIDTH / 2 - 60, (int) (GameScreen.HEIGHT * 0.25) - 2);
+            AssetLoader.FONT.draw(spriteBatch, "High Score : " + Integer.toString(AssetLoader.getHighScore()), GameScreen.WIDTH / 2 - 61, (int) (GameScreen.HEIGHT * 0.25));
         } else {
             // Draw end text
             if (((Status) gameEntities).isGameOver() || ((Status) gameEntities).isHighScore()) {
