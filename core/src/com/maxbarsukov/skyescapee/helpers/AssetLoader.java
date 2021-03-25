@@ -16,7 +16,7 @@ public class AssetLoader {
     private static final String TEXTURE_TUBE = "img/tube.png";
     private static final String TEXTURE_GROUND = "img/ground.png";
     private static final String TEXTURE_BACKGROUND_DAY = "img/background_day.png";
-    private static final String TEXTURE_REGION_PLAYER_FLY = "img/animation_bird.png";
+    private static final String TEXTURE_REGION_PLAYER_FLY = "img/animation_player.png";
     private static final String TEXTURE_GAMEOVER = "img/gameover.png";
 
     private static final String MUSIC_SOUND = "sound/music.mp3";
