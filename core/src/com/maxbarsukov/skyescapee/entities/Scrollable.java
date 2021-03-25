@@ -1,4 +1,4 @@
 package com.maxbarsukov.skyescapee.entities;
 
-public class Ground extends Scrollable {
+public abstract class Scrollable {
 }
