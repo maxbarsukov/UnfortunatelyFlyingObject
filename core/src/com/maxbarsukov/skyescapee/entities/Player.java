@@ -4,12 +4,13 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Player {
+    // Class constants
     private static final int FLAP = 230;
     private static final int GRAVITY = -460;
-    private static final int VELOCITY_LIMIT = -345;
     private static final int FALL = -110;
     private static final int FLAP_AT = -70;
 
+    // Instance variables
     private Vector2 position;
     private Vector2 velocity;
     private Vector2 acceleration;
