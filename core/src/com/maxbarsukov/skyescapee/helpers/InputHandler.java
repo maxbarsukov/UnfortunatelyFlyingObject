@@ -18,7 +18,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
-        return keycode == Input.Keys.SPACE && handleBird();
+        return keycode == Input.Keys.SPACE && handlePlayer();
     }
 
     @Override
@@ -33,7 +33,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        return handleBird();
+        return handlePlayer();
     }
 
     @Override
@@ -56,7 +56,7 @@ public class InputHandler implements InputProcessor {
         return false;
     }
 
-    private boolean handleBird() {
+    private boolean handlePlayer() {
         if (status.isReady()) {
             status.start();
         }
