@@ -23,14 +23,16 @@ public class Tube extends Scrollable {
         boundsTop = new Rectangle(x, y + TUBE_GAP + height, width, height);
     }
 
-    @Override public void update(float delta) {
+    @Override
+    public void update(float delta) {
         // Call the update method in the superclass (Scrollable)
         super.update(delta);
         boundsBottom.setPosition(position.x, position.y);
         boundsTop.setPosition(position.x, position.y + TUBE_GAP + height);
     }
 
-    @Override public void reset(float newX) {
+    @Override
+    public void reset(float newX) {
         super.reset(newX);
         position.y = generateY();
         scored = false;
@@ -48,12 +50,14 @@ public class Tube extends Scrollable {
         return random.nextInt(HIGHEST_OPENING) + LOWEST_OPENING;
     }
 
-    @Override public boolean collides(Player player) {
+    @Override
+    public boolean collides(Player player) {
         return position.x < player.getTailX() && (Intersector.overlaps(player.getBounds(),
                 boundsTop) || Intersector.overlaps(player.getBounds(), boundsBottom));
     }
 
-    @Override public void onReset(float x, float y, float scrollSpeed) {
+    @Override
+    public void onReset(float x, float y, float scrollSpeed) {
         velocity.x = scrollSpeed;
         reset(x);
     }

@@ -13,16 +13,19 @@ public class Ground extends Scrollable {
         bounds = new Rectangle(x, y, width, height);
     }
 
-    @Override public void update(float delta) {
+    @Override
+    public void update(float delta) {
         super.update(delta);
         bounds.setPosition(position.x, position.y);
     }
 
-    @Override public int getWidth() {
+    @Override
+    public int getWidth() {
         return width;
     }
 
-    @Override public int getHeight() {
+    @Override
+    public int getHeight() {
         return height;
     }
 
@@ -30,7 +33,8 @@ public class Ground extends Scrollable {
         return bounds;
     }
 
-    @Override public boolean collides(Player player) {
+    @Override
+    public boolean collides(Player player) {
         return position.y + height > player.getY() && (Intersector.overlaps(player.getBounds(), bounds));
     }
 }

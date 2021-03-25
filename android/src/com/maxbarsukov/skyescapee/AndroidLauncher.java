@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.maxbarsukov.skyescapee.Game;
+import com.maxbarsukov.skyescapee.Main;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
@@ -17,6 +17,6 @@ public class AndroidLauncher extends AndroidApplication {
 		config.useAccelerometer = false;
 		config.useGyroscope = false;
 
-		initialize(new Game(), config);
+		initialize(new Main(), config);
 	}
 }
