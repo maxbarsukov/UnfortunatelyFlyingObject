@@ -1,4 +1,5 @@
 package com.maxbarsukov.skyescapee.world;
 
-public class GameState {
+enum GameState {
+    READY, PLAYING, OVER, SCORE
 }
