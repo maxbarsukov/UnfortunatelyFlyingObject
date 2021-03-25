@@ -39,12 +39,11 @@ public class SplashScreen implements Screen {
         //Set the sprite's size
         float width = Gdx.graphics.getWidth();
         float height = Gdx.graphics.getHeight();
-        float scale = width * SCALE / sprite.getWidth();
-        sprite.setSize(sprite.getWidth() * scale, sprite.getHeight() * scale);
+        sprite.setSize(width, height);
 
         //Set the sprite's position
-        float positionX = width / 2 - sprite.getWidth() / 2;
-        float positionY = height / 2 - sprite.getHeight() / 2;
+        float positionX = 0;
+        float positionY = 0;
         sprite.setPosition(positionX, positionY);
 
         setupTween();
@@ -61,7 +60,7 @@ public class SplashScreen implements Screen {
             }
         };
 
-        Tween.to(sprite, SpriteAccessor.ALPHA, 0.8f)
+        Tween.to(sprite, SpriteAccessor.ALPHA, 1f)
                 .target(1)
                 .ease(TweenEquations.easeInOutQuad)
                 .repeatYoyo(1, 0.4f)
